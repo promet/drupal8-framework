@@ -6,11 +6,15 @@ www/themes/contrib
 www/profiles/contrib
 
 # Ignore Drupal's file directory
-www/sites/default/files
+*/sites/*/files
+*/sites/*/private
 
+# Ignore Drupal's settings file.
+*/sites/*/settings.php
+
+# Ignore build/config files and directories.
 build/ref
 cnf/config.yml
-cnf/settings.php
 .env
 
 # Ignore Vagrant box
