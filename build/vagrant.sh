@@ -51,8 +51,8 @@ then
   echo "*****************************************"
 fi
 
-if [[ ! -z `grep "# Promet Drupal 7 Framework" README.md` ]]
+if [[ ! -z `grep "# Promet Drupal 8 Framework" README.md` ]]
 then
-  sed -i "1s/^# Promet Drupal 7 Framework/# $project/" README.md
+  sed -i "1s/^# Promet Drupal 8 Framework/# $project/" README.md
   sed -i "s/drupalproject/$project/" README.md
 fi

@@ -1,4 +1,4 @@
-# Promet Drupal 7 Framework
+# Promet Drupal 8 Framework
 
 This is an example of a starting point for developing the "Promet Way".
 
