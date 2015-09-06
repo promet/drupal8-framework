@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3b9f492f46a192f38b5076ce7687242c",
+    "hash": "51298efcf8ddc213ac58d597952432f3",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4917,6 +4917,50 @@
                 "templating"
             ],
             "time": "2015-08-12 15:56:39"
+        },
+        {
+            "name": "winmillwill/settings_compile",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/winmillwill/settings_compile.git",
+                "reference": "9d0259fb139e4c3e94a5798ee0a942d33a544e20"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/winmillwill/settings_compile/zipball/9d0259fb139e4c3e94a5798ee0a942d33a544e20",
+                "reference": "9d0259fb139e4c3e94a5798ee0a942d33a544e20",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/config": "*",
+                "symfony/yaml": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "bin": [
+                "bin/settings_compile"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\Settings\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Will Milton",
+                    "email": "wa.milton@gmail.com"
+                }
+            ],
+            "time": "2014-10-15 17:50:37"
         },
         {
             "name": "zendframework/zend-diactoros",

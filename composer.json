@@ -62,7 +62,8 @@
         "drupal/panels": "8.3.*@alpha",
         "drupal/rules": "8.3.*@dev",
         "drupal/token": "8.1.*@dev",
-        "drush/drush": "8.*"
+        "drush/drush": "8.*",
+        "winmillwill/settings_compile": "~2.1.1"
     },
     "require-dev": {
         "drupal/config_devel": "8.1.*@beta",
@@ -75,10 +76,8 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "scripts/composer/post-install.sh"
-        ],
-        "post-update-cmd": [
-            "scripts/composer/post-install.sh"
+            "bin/wrapper",
+            "build/scripts/composer/post-install.sh"
         ]
     },
     "extra": {
