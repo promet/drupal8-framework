@@ -6,5 +6,7 @@
     echo "File config.yml copied to cnf directory\n\n";
   }
   $path = __DIR__ . "/../";
+  echo "Setting permissions of sites/default directory.";
+  chmod('www/sites/default', 0755);
   echo "Compiling Settings File.";
   exec($path . "vendor/bin/settings_compile cnf/config.yml www/sites/default/settings.php");
