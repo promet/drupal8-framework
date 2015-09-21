@@ -39,12 +39,15 @@ then
   echo "source env.dist" > .env
 fi
 source .env
-if [[ -f default.module ]]
+if [[ -d www/modules/default ]]
 then
   echo "Setting up Default Project Modules."
-  mkdir www/modules/custom/$project
-  mv default.module www/modules/custom/$project/$project.module
-  mv default.info www/modules/custom/$project/$project.info
+  if [[ ! -d www/modules/custom/$project ]]
+  then
+    mkdir www/modules/custom/$project
+  fi
+  mv www/modules/default.module www/modules/custom/$project/$project.module
+  mv www/modules/default.info.yml www/modules/custom/$project/$project.info.yml
   sed -i s/default/$project/g www/modules/custom/$project/$project.*
   echo "*****************************************"
   echo "* Don't forget to Commit these changes. *"
