@@ -47,8 +47,7 @@
     "require": {        
         "composer/installers": "^1.0.20",
         "drupal/core": "8.0.*@beta",
-        "drupal/admin_toolbar": "~8.1",
-        "drupal/console": "~0.8",
+        "drupal/console": "~0.9.0",
         "drupal/config_readonly": "8.1.*@dev",
         "drupal/config_update": "8.1.*@dev",
         "drupal/drupal-library-installer-plugin": "~0.1",
