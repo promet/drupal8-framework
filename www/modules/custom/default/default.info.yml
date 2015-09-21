@@ -1,7 +1,7 @@
-name = "Default D7"
-description = "Top module for drupalproject d7 project"
-package = "Default D7"
-core = "7.x"
+name = "Default D8"
+description = "Top module for default d8 project"
+package = "Default D8"
+core = "8.x"
 
 dependencies[] = admin_menu
 dependencies[] = block
