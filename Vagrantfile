@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
   project     = ENV["#{env_prefix}_PROJECT"] || 'drupalproject'
   # end tunables
 
-  config.vm.box     = "file://package.box"
+  config.vm.box     = "dsdobrzynski/jessie"
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", 2048]
   end
@@ -16,6 +16,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder ".", path, :nfs => true
   config.vm.hostname = "#{project}.dev"
 
+  config.ssh.insert_key = false
   config.ssh.forward_agent = true
   config.vm.network :private_network, ip: ip
 
