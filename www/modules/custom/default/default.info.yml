@@ -1,8 +1,8 @@
 name = Default D8
-type
-description = 'Top module for default d8 project'
+description = Top module for default d8 project
 package = Default D8
-core = "8.x"
+type: module
+core = 8.x
 
 dependencies[] = admin_toolbar
 dependencies[] = drop_ship
