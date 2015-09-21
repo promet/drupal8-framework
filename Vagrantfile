@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
   project     = ENV["#{env_prefix}_PROJECT"] || 'drupalproject'
   # end tunables
 
-  config.vm.box     = "dsdobrzynski/jessie"
+  config.vm.box     = "file://package.box"
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", 2048]
   end

@@ -99,6 +99,9 @@ start your development. Simply add a sql file to either of the following:
 * `build/ref/drupalproject.sql`
 * `build/ref/drupalproject.sql.gz`
 
+If you are encountering "Warning: Authentication failure. Retrying..", run:
+`ssh-add ~/.vagrant.d/insecure_private_key`.
+
 ## Use
 
 **IMPORTANT**
