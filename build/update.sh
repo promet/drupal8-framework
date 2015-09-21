@@ -9,13 +9,14 @@ echo "Initial Update so updated modules can work.";
 $drush updb -y;
 echo "Enabling modules";
 $drush en $(echo $DROPSHIP_SEEDS | tr ':' ' ')
-echo "Rebuilding registry and clearing drush caches.";
-$drush rr
+echo "Clearing drush caches.";
 $drush cc drush
-echo "Running manifests"
-$drush kw-m
-echo "Set default theme";
-$drush scr $base/build/scripts/default_set_theme.php
+# TO-DO: Upgrade kw_manifests and drop_ship to D8.
+#echo "Running manifests"
+#$drush kw-m
+# TO-DO: Move setting of default theme to KW manifest.
+#echo "Set default theme";
+#$drush scr $base/build/scripts/default_set_theme.php
 echo "Clearing caches one last time.";
 $drush cr
 
