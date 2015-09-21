@@ -9,7 +9,7 @@ echo "Initial Update so updated modules can work.";
 $drush updb -y;
 echo "Enabling modules";
 $drush en $(echo $DROPSHIP_SEEDS | tr ':' ' ')
-echo "Rebuilding registry and clearing caches.";
+echo "Rebuilding registry and clearing drush caches.";
 $drush rr
 $drush cc drush
 echo "Running manifests"
@@ -17,7 +17,7 @@ $drush kw-m
 echo "Set default theme";
 $drush scr $base/build/scripts/default_set_theme.php
 echo "Clearing caches one last time.";
-$drush cc all
+$drush cr
 
 chmod -R +w $base/cnf
 chmod -R +w $base/www/sites/default
