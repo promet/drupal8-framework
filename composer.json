@@ -1,7 +1,7 @@
 {
-    "name": "dsdobrzynski/drupal-framework",
+    "name": "promet/acton-d8",
     "type": "project",
-    "license": "GPL-2.0+",
+    "license": "propriatary",
     "authors": [
         {
             "name": "Will Milton",
@@ -11,7 +11,6 @@
             "name": "Doug Dobrzynski",
             "role": "Initial Creator of 7.x-dev version."
         }
-        
     ],
     "repositories": [
         {
@@ -44,9 +43,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
 
-    "require": {        
+    "require": {
         "composer/installers": "^1.0.20",
-        "drupal/core": "8.0.*@beta",
+        "drupal/core": "8.0.*@RC",
         "drupal/console": "~0.9.0",
         "drupal/config_readonly": "8.1.*@dev",
         "drupal/config_update": "8.1.*@dev",

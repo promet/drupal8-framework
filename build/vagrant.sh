@@ -5,13 +5,9 @@ project=$1
 path=$(dirname "$0")
 base=$(cd $path/.. && pwd)
 
-sudo apt-get update -y
 echo "Get Composer"
 [[ -z `which composer` ]] && curl -sS https://getcomposer.org/installer | php && cp composer.phar /usr/bin/composer && rm composer.phar || true
 composer self-update
-echo "Check for Version Control Tools"
-[[ -z `which git` ]] && apt-get install -q -y git || true
-[[ -z `which svn` ]] && apt-get install -q -y subversion || true
 if [[ ! -f /opt/phantomjs ]]
 then
   echo "Downloading PhantomJS"

@@ -11,12 +11,10 @@ echo "Enabling modules";
 $drush en $(echo $DROPSHIP_SEEDS | tr ':' ' ')
 echo "Clearing drush caches.";
 $drush cc drush
-# TO-DO: Upgrade kw_manifests and drop_ship to D8.
-#echo "Running manifests"
-#$drush kw-m
-# TO-DO: Move setting of default theme to KW manifest.
-#echo "Set default theme";
-#$drush scr $base/build/scripts/default_set_theme.php
+echo "Reverting Configuration"
+# In the future, use --force https://github.com/drush-ops/drush/pull/1635
+$drush cim sync
+# Default Theme is now set up in Drupal Configuration.
 echo "Clearing caches one last time.";
 $drush cr
 

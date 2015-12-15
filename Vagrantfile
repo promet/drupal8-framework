@@ -6,6 +6,7 @@ Vagrant.configure("2") do |config|
   project     = ENV["#{env_prefix}_PROJECT"] || 'drupalproject'
   # end tunables
 
+  # This should be changed to a Promet Box... Needs evaluation.
   config.vm.box     = "dsdobrzynski/jessie"
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", 2048]

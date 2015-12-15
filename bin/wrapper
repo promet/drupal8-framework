@@ -1,12 +1,19 @@
 #!/usr/bin/env php
 <?php
-
-  if(!file_exists('cnf/config.yml')) {
-    copy('cnf/config.yml.dist', 'cnf/config.yml');
-    echo "File config.yml copied to cnf directory\n\n";
-  }
   $path = __DIR__ . "/../";
   echo "Setting permissions of sites/default directory.";
   chmod('www/sites/default', 0755);
-  echo "Compiling Settings File.";
-  exec($path . "vendor/bin/settings_compile cnf/config.yml www/sites/default/settings.php");
+  echo "Moving Settings Files";
+  if (!file_exists($path . "cnf/settings.php")) {
+    echo "A Settings file does not exist in cnf/settings.php";
+    exit(1);
+  }
+  symlink("../../../cnf/settings.php", $path . "www/sites/default/settings.php");
+  if (!file_exists($path . "cnf/services.yml")) {
+    echo "A Settings file does not exist in cnf/services.yml";
+    exit(1);
+  }
+  symlink("../../../cnf/services.yml", $path . "www/sites/default/services.yml");
+  if (file_exists($path . "cnf/settings.local.php")) {
+    symlink("../../../cnf/settings.local.php", $path . "www/sites/default/settings.local.php");
+  }

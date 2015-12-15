@@ -8,8 +8,8 @@ drush="$PWD/vendor/bin/drush $drush_flags -y -r $base/www"
 if [[ -f .env ]]; then
   source .env
 else
-  echo "No env file found. Please create one. You can use env.dist as an example."
-  exit 1
+  echo "No env file found. We are using env.dist instead."
+  source env.dist
 fi
 # Confirm our working directory
 if [ ! -d $base/www ]; then
