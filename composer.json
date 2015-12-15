@@ -10,67 +10,44 @@
         {
             "name": "Doug Dobrzynski",
             "role": "Initial Creator of 7.x-dev version."
+        },
+        {
+            "name": "Allan Chappell",
+            "role": "8.x-dev Contributer"
         }
     ],
     "repositories": [
         {
             "type": "composer",
             "url": "https://packagist.drupal-composer.org"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "simplehtmldom/simplehtmldom",
-                "version": "1.11.210-dev",
-                "source": {
-                    "url": "http://svn.code.sf.net/p/simplehtmldom/code",
-                    "type": "svn",
-                    "reference": "trunk@210"
-                },
-                "dist": {
-                    "type": "zip",
-                    "url": "http://sourceforge.net/projects/simplehtmldom/files/latest/download?source=directory",
-                    "reference": null,
-                    "shasum": null
-                },
-                "autoload": {
-                    "classmap": ["simple_html_dom.php"],
-                    "files": ["simple_html_dom.php"]
-                }
-            }
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "alpha",
     "prefer-stable": true,
-
     "require": {
         "composer/installers": "^1.0.20",
-        "drupal/core": "8.0.*@RC",
+        "drupal/config_readonly": "8.1.*",
+        "drupal/config_update": "8.1.*",
         "drupal/console": "~0.9.0",
-        "drupal/config_readonly": "8.1.*@dev",
-        "drupal/config_update": "8.1.*@dev",
-        "drupal/drupal-library-installer-plugin": "~0.1",
+        "drupal/core": "8.0.*@RC",
         "drupal/date": "8.1.*@dev",
         "drupal/diff": "8.1.*@dev",
         "drupal/eform": "8.1.*@dev",
-        "drupal/features": "8.3.*@dev",
+        "drupal/features": "8.3.*",
         "drupal/feeds": "8.3.*@dev",
         "drupal/job_scheduler": "8.2.*@dev",
-        "drupal/omega": "8.5.*@dev",
-        "drupal/panels": "8.3.*@alpha",
-        "drupal/rules": "8.3.*@dev",
+        "drupal/omega": "8.5.*",
+        "drupal/panels": "8.3.*",
         "drupal/token": "8.1.*@dev",
-        "drush/drush": "8.*",
-        "winmillwill/settings_compile": "~2.1.1"
+        "drush/drush": "8.*"
     },
     "require-dev": {
+        "drupal/coder": "~8.2",
         "drupal/config_devel": "8.1.*@beta",
         "drupal/devel": "8.1.*@dev",
-        "drupal/diff": "8.1.*@dev",
+        "drupal/diff": "8.1.*",
         "drupal/stage_file_proxy": "8.1.*@dev",
-        "drupal/xhprof": "8.1.*@dev",
-        "simplehtmldom/simplehtmldom": "1.11.210-dev",
-        "drupal/coder": "~8.2"
+        "drupal/xhprof": "8.1.*"
     },
     "scripts": {
         "post-install-cmd": [
