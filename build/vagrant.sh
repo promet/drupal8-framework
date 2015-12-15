@@ -27,7 +27,7 @@ fi
 
 cd $base
 
-[[ ! -z `grep "PROJECT=default" env.dist` ]] && sed -i "s/default/$project/" env.dist
+[[ ! -z "$(grep 'PROJECT="default"' env.dist)" ]] && sed -i "s/default/$project/" env.dist
 
 if [[ ! -f .env ]]
 then
@@ -45,7 +45,7 @@ then
   mv www/modules/custom/default/default.module www/modules/custom/$project/$project.module
   mv www/modules/custom/default/default.info.yml www/modules/custom/$project/$project.info.yml
   rm -r www/modules/custom/default
-  sed -i s/default/$project/g www/modules/custom/$project/$project.* www/modules/custom/$project/composer.json
+  sed -i s/default/$project/g www/modules/custom/$project/$project.* ./composer.json
   echo "*****************************************"
   echo "* Don't forget to Commit these changes. *"
   echo "*****************************************"

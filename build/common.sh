@@ -39,7 +39,7 @@ done
 
 # Set the Default (or custom) drush commaand.
 if [[ "$drush" == "" ]]; then
-  if which drush > /dev/null; then
+  if which drush > /dev/null && [[ $(echo "$(drush --version --pipe) >= 8.0" | bc) == 1 ]]; then
     drush="drush -r $drupal_base"
   else
     drush="$base/vendor/bin/drush -r $drupal_base"

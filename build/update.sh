@@ -12,12 +12,12 @@ pushd "$drupal_base"
 echo "Initial Update so updated modules can work.";
 $drush updb -y;
 echo "Enabling modules";
-$drush en $(echo $DROPSHIP_SEEDS | tr ':' ' ')
+$drush en $(echo $DROPSHIP_SEEDS | tr ':' ' ') -y
 echo "Clearing drush caches.";
 $drush cc drush
 echo "Reverting Configuration"
 # In the future, use --force https://github.com/drush-ops/drush/pull/1635
-$drush cim sync
+$drush cim sync -y
 # Default Theme is now set up in Drupal Configuration.
 echo "Clearing caches one last time.";
 $drush cr
