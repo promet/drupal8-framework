@@ -18,14 +18,13 @@ elif [ -e "$sqlfile" ]; then
   $drush sqlc < $sqlfile
 else
   echo "...from scratch, with Drupal minimal profile.";
-# Setting PHP Options so that we don't fail while sending mail if a mail sytem
-# doesn't exist.
+  # Setting PHP Options so that we don't fail while sending mail if a mail system
+  # doesn't exist.
   PHP_OPTIONS="-d sendmail_path=`which true`" $drush si minimal --account-name=admin --account-pass=drupaladm1n -y
-# TODO: Get this uuid dynamicall... if system.site doesn't exist in cnf/drupal,
-# export all the configuration here. Pick up the UUID from system.site and run command
-# below with the value gotten.
-
-# FOR NOW: This will need to be changed for each site... to be what ever the initial export is.
-  $drush cset system.site uuid 8219a550-3c86-442a-b200-e223eedb9585 -y
+  if [[ -e "$base/cnf/drupal/system.site.yml" ]]; then
+    # Without this, our import would fail in update.sh. See https://github.com/drush-ops/drush/pull/1635
+    site_uuid="$(grep "uuid: " "$base/cnf/drupal/system.site.yml" | sed "s/uuid: //")"
+    $drush cset system.site uuid $site_uuid -y
+  fi
 fi
 source $path/update.sh

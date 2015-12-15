@@ -15,8 +15,13 @@ echo "Enabling modules";
 $drush en $(echo $DROPSHIP_SEEDS | tr ':' ' ') -y
 echo "Clearing drush caches.";
 $drush cc drush
-echo "Reverting Configuration"
 # In the future, use --force https://github.com/drush-ops/drush/pull/1635
+if [[ ! -e "$base/cnf/drupal/system.site.yml" ]]; then
+  echo "Exporting Configuration for BRAND NEW SITE."
+  $drush cex -y
+  echo "Commit these changes."
+fi
+echo "Reverting Configuration"
 $drush cim sync -y
 # Default Theme is now set up in Drupal Configuration.
 echo "Clearing caches one last time.";
