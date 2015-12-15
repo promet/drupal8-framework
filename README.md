@@ -3,7 +3,7 @@
 ## Getting Started Developing
 
 * You need to edit your machine's local host file. Add the entry
-  `10.33.36.21 drupalproject.dev`
+  `10.33.36.11 drupalproject.dev`
 * Run `vagrant up --provision` to build the environment.
 * ssh in with `vagrant ssh`
 * Navigate to `/var/www/sites/drupalproject.dev`.
